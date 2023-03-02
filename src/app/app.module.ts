@@ -17,6 +17,7 @@ import { SmgsComponent } from './components/smgs/smgs.component';
 import { SmgsDetailComponent } from './components/smgs-detail/smgs-detail.component';
 import { CimsmgsComponent } from './components/cimsmgs/cimsmgs.component';
 import { TabNavigatorComponent } from './components/tab-navigator/tab-navigator.component';
+import { InputComponent } from './components/UI/input/input.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TabNavigatorComponent } from './components/tab-navigator/tab-navigator.
     SmgsComponent,
     SmgsDetailComponent,
     CimsmgsComponent,
-    TabNavigatorComponent
+    TabNavigatorComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
