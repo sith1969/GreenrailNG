@@ -1,0 +1,21 @@
+<div style="display: flex; position: relative; cursor: pointer; width: 100%;">
+  <button mat-button color="primary" *ngIf="showMoreButton" (click)="more()">{{getMoreText()}}</button>
+  <svg viewBox="0 0 24 24" focusable="false" style="width: 30px;" (click)="start()"><path d="M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"></path></svg>
+  <svg viewBox="0 0 24 24" focusable="false" style="width: 30px;" (click)="decPage()"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+
+  <button mat-button *ngIf="showFromTo" color="primary" (click)="enterPage()">{{pageIndex + 1}}<label *ngIf="pagesNumber>1">-{{pageIndex + pagesNumber}}</label> из {{getPages()}}</button>
+
+  <div *ngIf="!showFromTo" style="display: flex; flex-flow: row;">
+      <input #inputEditPage [(ngModel)]="pageEdit" style="width: 40px; position: relative; border-radius: 6px; border-width: 2px; border-color: darkgrey; margin: 4px; padding: 5px;" (keypress)="keypressInputEdit($event)">
+
+      <!-- (focusout)="setPage()" -->
+
+      <mat-icon svgIcon="send" (click)="setPage()" style=" position: relative; top: 8px;"></mat-icon>
+      <mat-icon svgIcon="close" (click)="showFromTo=true" style=" position: relative; top: 8px;"></mat-icon>
+  </div>
+
+  <svg viewBox="0 0 24 24" focusable="false" style="width: 32px;" (click)="incPage()"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+  <svg viewBox="0 0 24 24" focusable="false" style="width: 32px;" (click)="end()"><path d="M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"></path></svg>
+  <span style="flex: 1 1 auto;"></span>
+  <label style="position: relative; top: 10px; text-align: center; font-weight: 500;" *ngIf="showStat&&length>0">{{getStatText()}}</label>
+</div>

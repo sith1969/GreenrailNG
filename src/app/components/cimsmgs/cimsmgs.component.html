@@ -1,0 +1,12 @@
+<div style="height: 79%; display: flex; flex-flow: column;">
+  <div style="height: 100%; overflow-y: scroll;">
+    <p>cimsmgs works!</p>
+  </div>
+</div>
+<div style="margin-left: 8px; margin-right: 8px; ">
+  <!-- <app-tab-navigator #bottomnav *ngIf="data.showAsDialog" [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber" [showMoreButton]="true" [loaded]="list.rows.length" (page)="onPage($event)" [showStat]="true" [shortStat]="true"></app-tab-navigator> -->
+  <app-tab-navigator #bottomnav                               [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber"
+                      [showMoreButton]="true" [loaded]="list.rows.length" (page)="onPage($event)" [showStat]="true" [shortStat]="true">
+  </app-tab-navigator>
+</div>
+<!-- [length]="1" плявляется инфо справа -->

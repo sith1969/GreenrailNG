@@ -1,0 +1,55 @@
+{
+  "User" : [
+  {
+    "id":  1 ,
+    "email": "admin@gmail.ru",
+    "name": "admin1",
+    "password" : "admin1admin1"
+  },
+  {
+    "id":  2 ,
+    "email": "admin2@gmail.ru",
+    "name": "admin2",
+    "password": "admin2admin2"
+  }
+ ],
+
+  "products": [
+    { "id": 1,
+     "title": "Macbook Air",
+     "price": 900,
+     "year" : 2022,
+     "image" :"assets/images/macbook.jpeg",
+     "configure" :{
+      "chip":"M1",
+      "SSD":"256 GB",
+      "memory":"8GB",
+      "display":"Retina"
+     }
+    },
+    { "id": 2,
+     "title": "Macbook PRO(Intel)",
+     "price": 1000,
+     "year" : 2022,
+     "image" :"assets/images/macbook.jpeg",
+     "configure" :{
+      "chip":"M1",
+      "SSD":"256 GB",
+      "memory":"16GB",
+      "display":"Retina"
+     }
+    },
+    { "id": 3,
+     "title": "Macbook Pro",
+     "price": 1300,
+     "year" : 2022,
+     "image" :"/assets/images/macbook.jpeg",
+     "configure" :{
+      "chip":"M1",
+      "SSD":"500 GB",
+      "memory":"16GB",
+      "display":"Retina Pro"
+     }
+    }
+  ]
+}
