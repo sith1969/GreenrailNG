@@ -24,6 +24,8 @@ import { InputComponent } from './components/UI/input/input.component';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { WaitDialogComponent } from './components/UI/wait-dialog/wait-dialog.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FormsModule,
     MatDatepickerModule,
     MatMenuModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule,
+    HttpClientModule
 
 
   ],

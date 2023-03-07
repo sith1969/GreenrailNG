@@ -1,4 +1,9 @@
 export class CimSmgsItem implements Object {
-  un: string;
-
+  hid: number;
+  text: string;
+  type: number;
 }
+
+// export interface CimSmgsItem {
+
+// }

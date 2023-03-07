@@ -1,4 +1,34 @@
 {
+  "Cimsmgs" : [
+    {
+      "hid":  1 ,
+      "text": "admin@gmail.ru",
+      "type": 2
+    },
+    {
+      "hid":  2 ,
+      "text": "admin2@gmail.ru",
+      "type": 2
+    },
+    {
+      "hid":  3 ,
+      "text": "a3@gmail.ru",
+      "type": 2
+    }
+   ],
+
+  "Smgs" : [
+    {
+      "hid":  1 ,
+      "text": "admin@gmail.ru"
+    },
+    {
+      "hid":  2 ,
+      "text": "admin2@gmail.ru"
+    }
+   ],
+
+
   "User" : [
   {
     "id":  1 ,

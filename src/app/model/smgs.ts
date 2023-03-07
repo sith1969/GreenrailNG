@@ -1,3 +1,5 @@
 export class SmgsItem implements Object {
-  un: string;
+  hid: number;
+  text: string;
+  type: number;
 }
