@@ -1,1 +1,50 @@
-<p>input works!</p>
+<span #mainSpan style="display: flex; flex-flow: row; position: relative;">
+  <div id="divInput" (style.left.px)="left" [style.border-color]="!valid?'red':''" [style.background-color]="!disabled?'':'RGB(230,230,230)'">
+
+    <input #inputText *ngIf="type==='text'" (keyup)="keyupEvent($event)" [maxlength]="maxlength"
+      (focusout)="focusout()" [formControl]="textValidator" [style]="valid?validStyle:invalidStyle" [style.width]="widthpx" [type]="htmlInputType"/>
+
+    <span *ngIf="type==='date'||type==='datetime'" style="display: flex; flex-flow: row;" [style.width]="widthpx">
+      <mat-datepicker #datePicker ></mat-datepicker>
+      <input #inputDate (keyup)="keyupDateEvent($event)" (dateChange)="dateChange()"
+        [matDatepicker]="datePicker" [formControl]="dateValidator" [style]="dateValidator.invalid?invalidStyle:validStyle" [maxlength]="maxlength" style="padding-right: 0px;"/>
+
+      <span *ngIf="type==='datetime'" style="display: flex; flex-flow: row;">
+        <input #inputHour [(ngModel)]="_hours" (keyup)="keyupHoursEvent($event)" [style]="validHours?validStyle:invalidStyle" style="width: 18px; padding-right: 0px;" maxlength=2/>
+        <label style="align-self: center;">:</label>
+        <input #inputHour [(ngModel)]="_minutes" (keyup)="keyupMinutesEvent($event)" [style]="validMinutes?validStyle:invalidStyle" style="width: 18px; padding-left: 0px; padding-right: 0px;" maxlength=2/>
+        <label *ngIf="showSeconds" style="align-self: center;">:</label>
+        <input *ngIf="showSeconds" #inputSecond [(ngModel)]="_seconds" (keyup)="keyupSecondsEvent($event)" [style]="validSeconds?validStyle:invalidStyle" style="width: 18px; padding-left: 0px;" maxlength=2/>
+      </span>
+    </span>
+
+    <input #inputNsi *ngIf="type==='nsi'" (keyup)="keyupNsiEvent($event)" (keydown)="keyDownEvent($event)" [style.width]="widthpx" [formControl]="textValidator"/>
+
+    <span *ngIf="type==='combo'">
+      <mat-menu #comboMenu>
+        <div *ngIf="options.length>0" style="border: 0px; display: flex; flex-flow: column;">
+          <button mat-menu-item color="primary" *ngFor="let item of options" (click)="menuClick(item)"><mat-icon *ngIf="item.img!==''" [svgIcon]="item.img"></mat-icon>{{item.text}}</button>
+        </div>
+        <mat-spinner *ngIf="options.length===0"></mat-spinner>
+      </mat-menu>
+
+      <input #inputCombo readonly [style.cursor]="'pointer'" (keyup)="keyupComboEvent($event)" (click)="openCombo()"
+        [style]="valid?validStyle:invalidStyle" [style.width]="widthpx" [matMenuTriggerFor]="comboMenu" [formControl]="textValidator"/>
+    </span>
+
+
+    <mat-icon *ngIf="type==='combo'" svgIcon="arrow-down-bold" (click)="!disabled && openCombo()" style="height: 22px;"></mat-icon>
+    <mat-icon *ngIf="type==='nsi'" svgIcon="book-open-variant" title="Открыть справочник" (click)="!disabled && nsiOpenEvent(true)" style="height: 22px;"></mat-icon>
+    <mat-icon *ngIf="type==='nsi'&&!hideNsiWarn&&!nsiSelected" svgIcon="alert-circle-outline" [title]="'Не выбрано из справочника'+(empty?', допустимо пустое значение':'')" style="width: 20px;" [style.color]="!empty? 'red' : ''"></mat-icon>
+    <mat-icon *ngIf="type==='text'&&imgButton!==''" [svgIcon]="imgButton" style="width: 24px;" (click)="imgButtonClick()" ></mat-icon>
+    <svg *ngIf="type==='date'||type==='datetime'" style="width: 24px; height: 24px; cursor: pointer; align-self: center;" viewBox="0 0 24 24" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false" (click)="calendarToggle()">
+      <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path>
+    </svg>
+    <mat-icon *ngIf="clear" svgIcon="close-thick" title="Очистить значение" (click)="onClearValue()" style="width: 20px;"></mat-icon>
+
+  </div>
+  <label *ngIf="value===''||value===null" style="position: absolute; left: 8px; align-self: center; color: gray; z-index: 1; font-size: small;">{{bgLabel}}</label>
+  <label *ngIf="label!==''" style="height: 100%; align-self: center;">{{label}}</label>
+
+</span>
+

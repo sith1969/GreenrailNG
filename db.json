@@ -3,17 +3,21 @@
     {
       "hid":  1 ,
       "text": "admin@gmail.ru",
-      "type": 2
+      "type": 2,
+      "total": 12
+
     },
     {
       "hid":  2 ,
       "text": "admin2@gmail.ru",
-      "type": 2
+      "type": 2,
+      "total": 22
     },
     {
       "hid":  3 ,
       "text": "a3@gmail.ru",
-      "type": 2
+      "type": 2,
+      "total": 32
     }
    ],
 

@@ -1,6 +1,57 @@
 <div style="height: 79%; display: flex; flex-flow: column;">
+  <div style="display: flex;">
+    <label style="margin-top: 8px;">&nbsp;<b>{{title}}</b></label>
+
+    <span class="spacer-end"></span>
+
+    <!-- <app-input  [type]="'text'" [width]="200" [imgButton]="'magnify'" (imgClick)="search()" [(value)]="params.query"></app-input> -->
+
+    <label style="margin-top: 8px;">Период</label>
+    <app-input [autowidth]="true" [type]="'date'" [(value)]="timeBegin" [empty]="false" (valueChange)="refresh(true)"></app-input>
+    <app-input [autowidth]="true" [type]="'date'" [(value)]="timeEnd" [empty]="false" (valueChange)="refresh(true)"></app-input>
+
+    <app-tab-navigator #topnav [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber" [loaded]="list.rows.length" (page)="onPage($event)"></app-tab-navigator>
+  </div>
+  <mat-divider></mat-divider>
   <div style="height: 100%; overflow-y: scroll;">
-    <p>cimsmgs works!</p>
+    <!-- <p>cimsmgs works!</p>
+    <p>smgs-list works!</p> -->
+    <div class="container">
+      <!-- <mat-toolbar color="primary" >
+        <mat-toolbar-row>
+          <span class="example-spacer"></span>
+          <button class="button" mat-flat-button color="basic" (click)="openDialog()">Добавить Товар</button>
+        </mat-toolbar-row>
+      </mat-toolbar> -->
+
+      <mat-card class="example-card" *ngFor="let cimSmgs of CimSmgsList" >
+        <mat-card-title>{{cimSmgs.hid}}</mat-card-title>
+
+        <img class="image" mat-card-image src="../../../assets/images/macbook.jpeg" />
+        <mat-card-content>
+          <p>info: {{cimSmgs.text}} </p>
+          <p>тип документа: {{cimSmgs.type}}</p>
+          <p>стоимость: {{cimSmgs.total | currency}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="button" mat-flat-button color="primary" type="button">В
+            Корзину</button>
+          <button class="button" mat-flat-button color="primary" >Подробнее</button>
+          <button class="button" mat-flat-button color="primary" >Ред.</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item >Удалить</button>
+            <button mat-menu-item >Ред.</button>
+          </mat-menu>
+        </mat-card-actions>
+
+
+      </mat-card>
+
+    </div>
+
+
+
+
   </div>
 </div>
 <div style="margin-left: 8px; margin-right: 8px; ">
