@@ -41,7 +41,7 @@ export class InputComponent implements OnInit, OnDestroy, AfterContentInit, Afte
     if (val !== null && this.paddingLen > 0 && !this.hasFocus())
       val = this.getPadding(val);
 
-    if (this.type === 'text' || this.type === 'combo' || this.type === 'nsi') {
+    if (this.type === 'text' || this.type === 'combo' || this.type === 'nsi' || this.type === 'Cimsmgs' ) {
         this.textValidator.setValue(val);
     } else if (this.type === 'date') {
       this.dateValidator.setValue(moment(val, 'DD.MM.YYYY'))

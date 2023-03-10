@@ -24,11 +24,15 @@
   "Smgs" : [
     {
       "hid":  1 ,
-      "text": "admin@gmail.ru"
+      "text": "admin@gmail.ru",
+      "type": 1,
+      "total": 32
     },
     {
       "hid":  2 ,
-      "text": "admin2@gmail.ru"
+      "text": "admin2@gmail.ru",
+      "type": 1,
+      "total": 32
     }
    ],
 

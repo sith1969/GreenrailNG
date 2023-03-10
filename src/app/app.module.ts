@@ -10,11 +10,13 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMenuModule} from '@angular/material/menu';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { MatNativeDateModule, MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDividerModule} from '@angular/material/divider'
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, DatePipe } from '@angular/common';
+import { MatTableModule} from '@angular/material/table';
 
 
 
@@ -26,10 +28,22 @@ import { SmgsDetailComponent } from './components/smgs-detail/smgs-detail.compon
 import { CimsmgsComponent } from './components/cimsmgs/cimsmgs.component';
 import { TabNavigatorComponent } from './components/tab-navigator/tab-navigator.component';
 import { InputComponent } from './components/UI/input/input.component';
-import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { WaitDialogComponent } from './components/UI/wait-dialog/wait-dialog.component';
+import { SnackComponent } from './components/UI/snack/snack.component';
+import { ShowMessageComponent } from './components/UI/show-message/show-message.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
-
+export const PredDateFormats = {
+  parse: {
+    dateInput: 'DD.MM.YYYY',
+  },
+  display: {
+    dateInput: 'DD.MM.YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMM YYYY',
+  },
+};
 
 
 @NgModule({
@@ -43,7 +57,9 @@ import { WaitDialogComponent } from './components/UI/wait-dialog/wait-dialog.com
     CimsmgsComponent,
     TabNavigatorComponent,
     InputComponent,
-    WaitDialogComponent
+    WaitDialogComponent,
+    SnackComponent,
+    ShowMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,17 +70,24 @@ import { WaitDialogComponent } from './components/UI/wait-dialog/wait-dialog.com
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
+
     MatMenuModule,
     MatProgressSpinnerModule,
     MatCardModule,
     HttpClientModule,
     MatDividerModule,
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatDialogModule
+
 
 
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },       // , MAT_MOMENT_DATE_ADAPTER_OPTIONS
+    { provide: MAT_DATE_FORMATS, useValue: PredDateFormats },
+    { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' },
      DatePipe
   ],
   bootstrap: [AppComponent]
