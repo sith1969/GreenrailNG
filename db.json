@@ -4,20 +4,20 @@
       "hid":  1 ,
       "text": "admin@gmail.ru",
       "type": 2,
-      "total": 12
+      "sum": 12
 
     },
     {
       "hid":  2 ,
       "text": "admin2@gmail.ru",
       "type": 2,
-      "total": 22
+      "sum": 22
     },
     {
       "hid":  3 ,
       "text": "a3@gmail.ru",
       "type": 2,
-      "total": 32
+      "sum": 32
     }
    ],
 
@@ -26,13 +26,13 @@
       "hid":  1 ,
       "text": "admin@gmail.ru",
       "type": 1,
-      "total": 32
+      "sum": 32
     },
     {
       "hid":  2 ,
       "text": "admin2@gmail.ru",
       "type": 1,
-      "total": 32
+      "sum": 32
     }
    ],
 

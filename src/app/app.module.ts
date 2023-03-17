@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMenuModule} from '@angular/material/menu';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { MatNativeDateModule, MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDividerModule} from '@angular/material/divider'
-import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, DatePipe } from '@angular/common';
-import { MatTableModule} from '@angular/material/table';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatIconRegistry } from '@angular/material/icon';
 
 
 import { HeaderComponent } from './components/UI/header/header.component';
@@ -31,7 +32,7 @@ import { InputComponent } from './components/UI/input/input.component';
 import { WaitDialogComponent } from './components/UI/wait-dialog/wait-dialog.component';
 import { SnackComponent } from './components/UI/snack/snack.component';
 import { ShowMessageComponent } from './components/UI/show-message/show-message.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { CimsmgsDetailComponent } from './components/cimsmgs-detail/cimsmgs-detail.component';
 
 export const PredDateFormats = {
   parse: {
@@ -59,7 +60,8 @@ export const PredDateFormats = {
     InputComponent,
     WaitDialogComponent,
     SnackComponent,
-    ShowMessageComponent
+    ShowMessageComponent,
+    CimsmgsDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -83,13 +85,25 @@ export const PredDateFormats = {
 
 
 
+
+
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },       // , MAT_MOMENT_DATE_ADAPTER_OPTIONS
     { provide: MAT_DATE_FORMATS, useValue: PredDateFormats },
     { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' },
-     DatePipe
+     DatePipe,
+     {
+      provide: MatDialogRef,
+      useValue: {}
+    },
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
+    iconRegistry.addSvgIconSet(
+      domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg')
+    );
+  }
+}

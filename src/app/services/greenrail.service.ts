@@ -4,8 +4,8 @@ import { CimSmgsItem } from '../model/cimsmgs';
 import { BehaviorSubject } from 'rxjs';
 import { DataList } from '../model/common';
 import { Router } from '@angular/router';
-//import { DatePipe } from '@angular/common';
-//import { MainService } from './main.service';
+import { DatePipe } from '@angular/common';
+import { MainService } from './main.service';
 //import { SmgsItem } from '../model/smgs';
 
 
@@ -18,12 +18,13 @@ export class GreenrailService {
 
   // public session: PredSession = new PredSession();
 
-  public CimSmgsListMain = new BehaviorSubject<DataList>({total: 0, rows: []});
+  public CimSmgsList = new BehaviorSubject<DataList>({total: 0, rows: []});
 
   constructor(
 
               private http: HttpClient,
-
+              public datepipe: DatePipe,
+              public mainService: MainService,
               private router: Router
              ) {  }
 
@@ -33,30 +34,13 @@ export class GreenrailService {
     // document.getElementsByTagName('base')[0].href +
   }
 
-
-
    getCimSmgsList() {
+    // this.http.get<CimSmgsItem[]>(this.apiURLs.urlMain);
     return this.http.get<CimSmgsItem[]>(this.apiURLs.urlMain);
-
   }
 
   getCimSmgsDetail(hid: number) {
     return this.http.get<CimSmgsItem>(`${this.apiURLs.urlMain}/${hid}`);
-
   }
 
-  // getTDColor(colIdx: number, i: number) {
-  //   if (colIdx === 0) {
-  //     if (i % 2 > 0)
-  //       return '#FFFFFF';
-  //     else
-  //       return '#F0F0F0';
-  //   } else if (colIdx === 1) {
-  //     if (i % 2 === 0)
-  //       return '#FFFFFF';
-  //     else
-  //       return '#F0F0F0';
-  //   }
-  //   return '#FFFFFF';
-  // }
 }

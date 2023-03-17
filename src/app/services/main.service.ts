@@ -21,11 +21,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class MainService {
 
-  // apiURLs = {urlMain: 'http://localhost:3000/Cimsmgs'}
-
-  // // public session: PredSession = new PredSession();
-
-  // public CimSmgsListMain = new BehaviorSubject<DataList>({total: 0, rows: []});
+   // // public session: PredSession = new PredSession();
 
   constructor(public datepipe: DatePipe,
               private http: HttpClient,
@@ -34,26 +30,7 @@ export class MainService {
               public dialog: MatDialog
              ) {   }
 
-  // getAPIUrl(srv: string): string {
-  //   return this.apiURLs[srv];
-  //   //'/aspred2' +
-  //   // document.getElementsByTagName('base')[0].href +
-  // }
-
-
-
-  //  getCimSmgsList() {
-  //   return this.http.get<CimSmgsItem[]>(this.apiURLs.urlMain);
-
-  // }
-
-  // getCimSmgsDetail(hid: number) {
-  //   return this.http.get<CimSmgsItem>(`${this.apiURLs.urlMain}/${hid}`);
-
-  // }
-  //--------------------------------------------------------------------------------------------------------------------
-  //
-
+    //--------------------------------------------------------------------------------------------------------------------
   // popupMessage(msg: PopupMessage) {
   //   this._snackBar.openFromComponent(SnackComponent, {
   //     duration: msg.severity === 'info'? 5000 : 0,
