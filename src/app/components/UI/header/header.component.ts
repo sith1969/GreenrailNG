@@ -12,4 +12,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setMode(obj: string){
+
+  }
+
+  onExit() {
+
+  }
+
 }

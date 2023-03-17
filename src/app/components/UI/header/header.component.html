@@ -1,26 +1,35 @@
-<div class="layout-wrapper">
-  <!-- <div class="layout-topbar" style="width: 100%; height: 48px; position: fixed; top:0; left:0; z-index: 100; box-shadow: 0 2px 5px 0 rgba(0,0,0,.3); background-color: rgb(66, 183, 238);"> -->
-
-
-    <mat-toolbar color="primary" style="height: 48px;">
-      <mat-toolbar-row>
-        <div class="toolbar no-select" routerLink="">
+<mat-toolbar style="height: 32px;">
+   <mat-toolbar-row style="height: 32px;">
+        <!-- <div class="toolbar no-select" routerLink="">
           <mat-icon style="margin-right: 5px;">dehaze</mat-icon>
           <span>GreenRail</span>
-        </div>
-        <div class="layout-topbar">
-          <button mat-stroked-button  style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="smgs"><mat-icon svgIcon="bus-alert" style="width: 24px; height: 24px;"></mat-icon > СМГС</button>
-          <button mat-stroked-button  color="warn" style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="cimsmgs"><mat-icon svgIcon="bus-alert" style="width: 24px; height: 24px;"></mat-icon> ЦИМСМГС</button>
-        </div>
-        <!-- <span class="example-spacer"></span> -->
-        <!-- <div class="toolbar no-select">
-
-          <button class="toolbar button" mat-flat-button routerLink="smgs">СМГС</button>
-          <button class="toolbar button" mat-flat-button routerLink="cimsmgs">ЦИМСМГС</button>
-
-
         </div> -->
-      </mat-toolbar-row>
-    </mat-toolbar>
-</div>
+        <!-- <div class="layout-topbar"> -->
+          <mat-icon style="margin-right: 5px;">dehaze</mat-icon>
+          <span>GreenRail</span>
+
+          <button mat-stroked-button  style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="smgs"><mat-icon svgIcon="bus-alert" style="width: 24px; height: 24px;"></mat-icon > СМГС</button>
+          <button mat-stroked-button  style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="cimsmgs"><mat-icon svgIcon="bus-alert" style="width: 24px; height: 24px;"></mat-icon> ЦИМСМГС</button>
+
+         <button mat-stroked-button color="primary" (click)="setMode('predList')" style="margin-left: 2px;" routerLink="smgs" >СМГС</button>
+    <button mat-stroked-button color="primary" (click)="setMode('noPredList')"style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="cimsmgs">ЦИМСМГС</button>
+    <button mat-stroked-button color="primary" (click)="setMode('signPredList')" style="margin-left: 2px;">IRS</button>
+    <button mat-stroked-button color="primary" (click)="setMode('draftPredList')" style="margin-left: 2px;">Invoice</button>
+    <mat-icon>more_vert</mat-icon>
+    <button mat-stroked-button color="primary" (click)="setMode('telegram')" style="margin-left: 2px;">NSI</button>
+    <button mat-stroked-button color="primary" style="margin-left: 2px;background-color: darkblue; color:whitesmoke "><mat-icon svgIcon="book-open-page-variant-outline" style="width: 24px; height: 24px;"></mat-icon>НСИ</button>
+
+    <span class="example-spacer"></span>
+
+    <button mat-raised-button color="primary" (click)="setMode('wssList')" style="margin-left: 2px;">Поиск</button>
+    <button mat-raised-button color="accent"  style="margin-left: 2px;">Помощь</button>
+    <mat-icon>more_vert</mat-icon>
+    <!-- <button mat-stroked-button color="accent" >Выйти</button> -->
+    <button mat-menu-item color="warn" (click)="onExit()"><mat-icon style="color: red;" svgIcon="location-exit"></mat-icon>Выйти</button>
+
+        <!-- </div> -->
+
+  </mat-toolbar-row>
+</mat-toolbar>
 <!-- </div> -->
+
