@@ -1,0 +1,4 @@
+<div #me class="floating-panel-lite" (mouseover)="selfVisible=true" (mouseleave)="selfVisible=false">
+  <ng-content #name *ngIf="visible||selfVisible">
+  </ng-content>
+</div>

@@ -19,6 +19,12 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 import { HeaderComponent } from './components/UI/header/header.component';
@@ -33,6 +39,8 @@ import { WaitDialogComponent } from './components/UI/wait-dialog/wait-dialog.com
 import { SnackComponent } from './components/UI/snack/snack.component';
 import { ShowMessageComponent } from './components/UI/show-message/show-message.component';
 import { CimsmgsDetailComponent } from './components/cimsmgs-detail/cimsmgs-detail.component';
+import { FastHelpComponent } from './components/fast-help/fast-help.component';
+import { FloatingPanelComponent } from './components/floating-panel/floating-panel.component';
 
 export const PredDateFormats = {
   parse: {
@@ -61,7 +69,9 @@ export const PredDateFormats = {
     WaitDialogComponent,
     SnackComponent,
     ShowMessageComponent,
-    CimsmgsDetailComponent
+    CimsmgsDetailComponent,
+    FastHelpComponent,
+    FloatingPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -81,10 +91,13 @@ export const PredDateFormats = {
     MatDividerModule,
     CommonModule,
     MatTableModule,
-    MatDialogModule
-
-
-
+    MatDialogModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatChipsModule
 
 
   ],

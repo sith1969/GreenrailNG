@@ -19,9 +19,9 @@ export class GreenrailService {
   // public session: PredSession = new PredSession();
 
   public CimSmgsList = new BehaviorSubject<DataList>({total: 0, rows: []});
+  public SmgsList = new BehaviorSubject<DataList>({total: 0, rows: []});
 
   constructor(
-
               private http: HttpClient,
               public datepipe: DatePipe,
               public mainService: MainService,

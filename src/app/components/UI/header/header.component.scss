@@ -28,8 +28,11 @@
   max-width: 300px;
 }
 
-.mat-stroked-button{
-  font-size:large;
+.buttonStyle{
+  font-size: 9px;
+  margin-left: 1px;
+  background-color: whitesmoke;
+  color:darkblue;
 
 }
 .layout-topbar .logo {
@@ -39,6 +42,7 @@
 }
 
 .example-icon {
+
   padding: 0 14px;
 }
 
@@ -75,14 +79,14 @@
   font-size: 12pt;
 }
 
-.tooltip {
-  font-size: 12pt;
-}
+// .tooltip {
+//   font-size: 12pt;
+// }
 
-.rotated90 {
-  transform: rotate(90deg);
-}
+// .rotated90 {
+//   transform: rotate(90deg);
+// }
 
-.rotated270 {
-  transform: rotate(270deg);
-}
+// .rotated270 {
+//   transform: rotate(270deg);
+// }

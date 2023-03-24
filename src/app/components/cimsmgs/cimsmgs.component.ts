@@ -22,7 +22,7 @@ export class CimsmgsComponent {
   timeBegin = '';
   timeEnd = '';
   @Input() params = null;
-  @Input() type = 'Cimsmgs';
+  // @Input() type = 'Cimsmgs';
 
   CimSmgsList: CimSmgsItem[];
   cimsmgsSubscription: Subscription;
@@ -85,9 +85,20 @@ export class CimsmgsComponent {
 
   }
 
-  deleteItem(i:number){
-
+    deleteItem(idx: number){
+    this.mainService.showMessage('Удаление', 'Удалить выбранную запись?',
+    {buttons:['Да', 'Нет']}).then(value => {
+      if (value === 0) {
+        // this.predService.nsiAbonDelete({un: this.list.rows[idx].un}).then(value => {
+        //  this.list.rows.splice(idx, 1);
+        //  this.nsiTable.renderRows();
+        //  this.mainService.infoMessage('Удаление', 'Успешно', 4000);
+        // });
+        this.mainService.infoMessage('Удаление', 'Успешно', 4000);
+      }
+    })
   }
+
 
   load(pageIndex: number, pageSize: number, pagesNumber: number, append: boolean) {
     // this.spinnerVisible = true;
@@ -114,7 +125,8 @@ export class CimsmgsComponent {
   editDialog(index: number ,_message: string, createRow: boolean, objNsi: CimSmgsItem): void {
     let dialogRef = this.dialog.open(CimsmgsDetailComponent, {
       restoreFocus: false,
-      width: '650px',
+      // width: '1200px',
+      width: '1220px',
       height: '',
       maxHeight: '95%',
 

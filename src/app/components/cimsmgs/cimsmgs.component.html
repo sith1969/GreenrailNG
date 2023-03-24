@@ -1,14 +1,27 @@
+<!-- <div style="height: 79%; display: flex; flex-flow: column;align-items: center;">
+  <div > -->
 <div style="height: 79%; display: flex; flex-flow: column;">
   <div style="display: flex;">
+
+
+
+    <!-- style="display: flex; flex-flow: row; align-items: center;" -->
     <label style="margin-top: 8px;">&nbsp;<b>{{title}}</b></label>
 
-    <span class="spacer-end"></span>
 
     <!-- <app-input  [type]="'text'" [width]="200" [imgButton]="'magnify'" (imgClick)="search()" [(value)]="params.query"></app-input> -->
 
     <label style="margin-top: 8px;">Период</label>
     <app-input [autowidth]="true" [type]="'date'" [(value)]="timeBegin" [empty]="false" (valueChange)="refresh(true)"></app-input>
     <app-input [autowidth]="true" [type]="'date'" [(value)]="timeEnd" [empty]="false" (valueChange)="refresh(true)"></app-input>
+
+    <span class="spacer-end"></span>
+
+    <app-fast-help>
+      Для добавления новой записи нажмите <mat-icon #helpIcon svgIcon="note-plus-outline" style="color: red;align-self: center;"></mat-icon><br>
+      Для изменения существующей записи выберите<mat-icon #helpIcon svgIcon="file-edit-outline" style="align-self: center;"></mat-icon><br>
+      Для удаления записи нажмите<mat-icon #helpIcon svgIcon="delete" style="align-self: center;"></mat-icon><br>
+    </app-fast-help>
 
     <app-tab-navigator #topnav [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber" [loaded]="list.rows.length" (page)="onPage($event)"></app-tab-navigator>
   </div>
@@ -78,6 +91,7 @@
     <th mat-header-cell *matHeaderCellDef style="width: 24px;">
     </th>
     <td  mat-cell *matCellDef="let element; let i = index">
+
       <mat-icon svgIcon="delete"  style="width: 24px; height: 24px;" (click)="deleteItem(i)" style="cursor: pointer;" matTooltip="Удалить" matTooltipClass="tooltip" matTooltipPosition="right"></mat-icon>
       <!-- <mat-icon  fontIcon="delete"  style="width: 24px; height: 24px;" (click)="deleteItem(i)" style="cursor: pointer;" matTooltip="Удалить" matTooltipClass="tooltip" matTooltipPosition="right"></mat-icon> -->
 

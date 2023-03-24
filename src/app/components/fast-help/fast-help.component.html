@@ -1,0 +1,15 @@
+
+<mat-chip (click)="mainService.showHelp()" (mouseenter)="showHelp=true" (mouseleave)="showHelp=false">
+  <mat-icon #helpIcon svgIcon="help" style="width: 20px; height: 20px; cursor: pointer; position: relative;"></mat-icon>
+</mat-chip>
+<app-floating-panel [visible]="showHelp" [control]="helpIcon">
+  <mat-card>
+    <mat-card-title style="display: flex; flex-flow: row; margin-left: 16px;">Скорая помощь</mat-card-title>
+    <mat-card-content>
+
+      <ng-content>
+      </ng-content>
+
+    </mat-card-content>
+  </mat-card>
+</app-floating-panel>

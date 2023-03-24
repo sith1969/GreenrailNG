@@ -4,20 +4,24 @@
       "hid":  1 ,
       "text": "admin@gmail.ru",
       "type": 2,
-      "sum": 12
+      "sum": 12,
+      "nkon": 123456
+
 
     },
     {
       "hid":  2 ,
       "text": "admin2@gmail.ru",
       "type": 2,
-      "sum": 22
+      "sum": 22,
+      "nkon": 123456
     },
     {
       "hid":  3 ,
       "text": "a3@gmail.ru",
       "type": 2,
-      "sum": 32
+      "sum": 32,
+      "nkon": 123456
     }
    ],
 
