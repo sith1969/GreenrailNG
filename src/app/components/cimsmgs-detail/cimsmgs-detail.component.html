@@ -5,14 +5,26 @@
       <mat-divider style="margin-top: 8px; margin-bottom: 4px;"></mat-divider>
       <div style="overflow-y: scroll; height: 100%; ">
         <div style="display: flex; flex-flow: column;height: 1700px;
+                    background-repeat: no-repeat;
                     background-image: url('../../../assets/cimsmgsmain.jpg');
                     min-width: 1200px">
-          <!-- height: 1440px smgs -->
-          <mat-grid-list cols="5" rowHeight="38px">
+         <!-- height: 1440px smgs -->
 
-            <!-- <mat-grid-tile [colspan]="2">
+          <div style="margin-top: 77px;margin-left: 118px;">
+            <app-input [type]="'text'" [(value)]="this.data.editdata.text" [clear]="true"  [width]="280" [maxlength]="50"  [checkerText]="'Номер абонента for example'"></app-input>
+          </div>
+          <div style="margin-top: 160px;margin-left: 118px;">
+            <textarea [(ngModel)]="this.data.editdata.text" cols="40" rows="3" style="margin-left: 2px; border: 1px solid gray; border-radius: 4px;"></textarea>
+          </div>
+          <div style="margin-top: 77px;margin-left: 318px;">
+            <app-input [type]="'nsi'" [(value)]="this.data.editdata.text" [clear]="true"  [width]="200" [maxlength]="50"  [checkerText]="'Номер абонента for example'"></app-input>
+          </div>
+          <!--<mat-grid-list cols="5" rowHeight="38px">
+
+             <mat-grid-tile [colspan]="2">
                   <span style="width: 100%;"><mat-label #labelCimSmgsHid>HID</mat-label></span>
-              </mat-grid-tile> -->
+              </mat-grid-tile>тn
+
               <mat-grid-tile [colspan]="5">
 
                   <div style="width: 100%; margin-left: 10px;">
@@ -20,7 +32,7 @@
                   </div>
               </mat-grid-tile>
 
-            <!-- <mat-grid-tile [colspan]="2">
+            <mat-grid-tile [colspan]="2">
                   <span style="width: 100%;"><mat-label #labelCimSmgsText></mat-label></span>
               </mat-grid-tile>
               <mat-grid-tile [colspan]="3">
@@ -50,9 +62,9 @@
                 <div style="width: 100%; margin-left: 10px;">
                     <app-input [width]="300" [type]="'text'" [(value)]="this.data.editdata.sum"  [clear]="true" [maxlength]="2"  [checkerText]="'Образец'"></app-input>
                 </div>
-            </mat-grid-tile> -->
+            </mat-grid-tile>
 
-          </mat-grid-list>
+          </mat-grid-list>-->
         </div>
       </div>
 </div>

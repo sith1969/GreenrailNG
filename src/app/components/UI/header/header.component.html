@@ -1,12 +1,30 @@
+
 <mat-toolbar style="height: 48px;">
-   <mat-toolbar-row style="height: 48px;">
+   <!-- <mat-toolbar-row style="height: 48px;"> -->
         <!-- <div class="toolbar no-select" routerLink="">
           <mat-icon style="margin-right: 5px;">dehaze</mat-icon>
           <span>GreenRail</span>
         </div> -->
         <!-- <div class="layout-topbar"> -->
-          <mat-icon style="margin-right: 5px;">dehaze</mat-icon>
-          <span>GreenRail</span>
+
+          <!-- <mat-drawer-container class="container" hasBackdrop="false" style="padding-top: 48px;width: 100%;height: 100%;">
+
+          </mat-drawer-container> -->
+
+          <mat-icon [matMenuTriggerFor]="SysMenu" svgIcon="menu" style="margin-right: 5px;padding-right: 8px; cursor: pointer;"></mat-icon>
+          <mat-menu #SysMenu="matMenu">
+            <button mat-menu-item color="primary"(click)="setMode('help')"><mat-icon svgIcon="help-box"></mat-icon>Помощь</button>
+            <button mat-menu-item><mat-icon svgIcon="book-open-variant"></mat-icon>Руководства</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item color="primary"><mat-icon svgIcon="check"></mat-icon><label style="cursor: pointer;" >Левая панель</label></button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item color="primary" (click)="setMode('help')"><mat-icon svgIcon="cog-outline"></mat-icon>Настройки</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item color="primary" ><mat-icon svgIcon="account-supervisor-circle"></mat-icon>Администрирование</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item color="warn" (click)="onExit()"><mat-icon style="color: red;" svgIcon="location-exit"></mat-icon>Выйти</button>
+          </mat-menu>
+          <span style="padding-right: 8px;color: green;">GreenRailNG</span>
 
     <button mat-stroked-button  style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="smgs"><mat-icon svgIcon="bus-alert" style="width: 24px; height: 24px;"></mat-icon > СМГС</button>
     <button mat-stroked-button  style="margin-left: 1px; background-color: whitesmoke; color:darkblue " routerLink="cimsmgs"><mat-icon svgIcon="bus-alert" style="width: 24px; height: 24px;"></mat-icon> ЦИМСМГС</button>
@@ -17,7 +35,8 @@
     <button mat-stroked-button color="primary" (click)="setMode('ordersPredList')" style="margin-left: 2px;">Orders</button>
     <button mat-stroked-button color="primary" (click)="setMode('cimList')" style="margin-left: 2px;">CIM</button>
     <button mat-stroked-button color="primary" (click)="setMode('specificationList')" style="margin-left: 2px;">Specifications</button>
-    <button mat-stroked-button color="primary" (click)="setMode('invoiceList')" style="margin-left: 2px;">Invoice</button>
+    <!-- <button mat-stroked-button color="primary" (click)="setMode('invoiceList')" style="margin-left: 2px;">Invoice</button> -->
+    <button mat-stroked-button color="primary" style="margin-left: 2px;" routerLink="invoice">Invoice</button>
     <mat-icon>more_vert</mat-icon>
     <!-- <button mat-stroked-button color="primary" (click)="setMode('nsi')" style="margin-left: 2px;">NSI</button> -->
     <button mat-stroked-button color="primary" style="margin-left: 2px;background-color: darkblue; color:whitesmoke "><mat-icon svgIcon="book-open-page-variant-outline" style="width: 24px; height: 24px;"></mat-icon>НСИ</button>
@@ -35,7 +54,6 @@
 
         <!-- </div> -->
 
-  </mat-toolbar-row>
+  <!-- </mat-toolbar-row> -->
 </mat-toolbar>
-<!-- </div> -->
-
+<mat-divider  style="height: 2px; margin-bottom: 1px;box-shadow: 0 2px 5px 0 rgba(0,0,0,.3); background-color:rgba(0,0,0,.3);"></mat-divider>

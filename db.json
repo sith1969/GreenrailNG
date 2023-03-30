@@ -5,7 +5,7 @@
       "text": "admin@gmail.ru",
       "type": 2,
       "sum": 12,
-      "nkon": 123456
+      "nkon": "123456"
 
 
     },
@@ -14,15 +14,30 @@
       "text": "admin2@gmail.ru",
       "type": 2,
       "sum": 22,
-      "nkon": 123456
+      "nkon": "123456"
     },
     {
       "hid":  3 ,
       "text": "a3@gmail.ru",
       "type": 2,
       "sum": 32,
-      "nkon": 123456
+      "nkon": "123456"
+    },
+    {
+      "hid":  3 ,
+      "text": "a5@gmail.ru",
+      "type": 1,
+      "sum": 322,
+      "nkon": "123456"
+    },
+    {
+      "hid":  3 ,
+      "text": "a4@gmail.ru",
+      "type": 1,
+      "sum": 332,
+      "nkon": "AEEE123456"
     }
+
    ],
 
   "Smgs" : [

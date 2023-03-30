@@ -1,18 +1,13 @@
-<!-- <div style="height: 79%; display: flex; flex-flow: column;align-items: center;">
-  <div > -->
-<div style="height: 79%; display: flex; flex-flow: column;">
+<div style="height: 88%; display: flex; flex-flow: column;">
   <div style="display: flex;">
-
-
-
     <!-- style="display: flex; flex-flow: row; align-items: center;" -->
     <label style="margin-top: 8px;">&nbsp;<b>{{title}}</b></label>
 
-
     <!-- <app-input  [type]="'text'" [width]="200" [imgButton]="'magnify'" (imgClick)="search()" [(value)]="params.query"></app-input> -->
 
-    <label style="margin-top: 8px;">Период</label>
+    <label style="margin-top: 8px;margin-left: 16px;">Период</label>
     <app-input [autowidth]="true" [type]="'date'" [(value)]="timeBegin" [empty]="false" (valueChange)="refresh(true)"></app-input>
+    <mat-icon svgIcon="arrow-right-bold-outline" style="align-self: center; width: 24px; height: 24px;"></mat-icon>
     <app-input [autowidth]="true" [type]="'date'" [(value)]="timeEnd" [empty]="false" (valueChange)="refresh(true)"></app-input>
 
     <span class="spacer-end"></span>
@@ -27,8 +22,8 @@
   </div>
   <mat-divider></mat-divider>
   <div style="height: 100%; overflow-y: scroll;">
-<!--  -->
-<table #predTable mat-table [dataSource]="list.rows" class="mat-elevation-z8 pred-table" >
+
+  <table #predTable mat-table [dataSource]="list.rows" class="mat-elevation-z8 pred-table" >
   <ng-container matColumnDef="expand">
     <th mat-header-cell *matHeaderCellDef aria-label="row actions" style="width: 40px;">
       <img *ngIf="spinnerVisible" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
@@ -109,7 +104,7 @@
 </div>
 <div style="margin-left: 8px; margin-right: 8px; ">
   <!-- <app-tab-navigator #bottomnav *ngIf="data.showAsDialog" [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber" [showMoreButton]="true" [loaded]="list.rows.length" (page)="onPage($event)" [showStat]="true" [shortStat]="true"></app-tab-navigator> -->
-  <app-tab-navigator #bottomnav                               [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber"
+  <app-tab-navigator                         [length]="list.total" [pageIndex]="pageIndex" [pageSize]="pageSize" [pagesNumber]="pagesNumber"
                       [showMoreButton]="true" [loaded]="list.rows.length" (page)="onPage($event)" [showStat]="true" [shortStat]="true">
   </app-tab-navigator>
 </div>

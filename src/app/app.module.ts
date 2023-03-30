@@ -25,7 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatChipsModule} from '@angular/material/chips';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { HeaderComponent } from './components/UI/header/header.component';
 import { FooterComponent } from './components/UI/footer/footer.component';
@@ -41,6 +42,7 @@ import { ShowMessageComponent } from './components/UI/show-message/show-message.
 import { CimsmgsDetailComponent } from './components/cimsmgs-detail/cimsmgs-detail.component';
 import { FastHelpComponent } from './components/fast-help/fast-help.component';
 import { FloatingPanelComponent } from './components/floating-panel/floating-panel.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 export const PredDateFormats = {
   parse: {
@@ -71,7 +73,8 @@ export const PredDateFormats = {
     ShowMessageComponent,
     CimsmgsDetailComponent,
     FastHelpComponent,
-    FloatingPanelComponent
+    FloatingPanelComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +100,9 @@ export const PredDateFormats = {
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTooltipModule,
+    MatSidenavModule
 
 
   ],
@@ -113,6 +118,8 @@ export const PredDateFormats = {
   ],
   bootstrap: [AppComponent]
 })
+
+// для модуля иконок mdi.svg ; нужна еще команда  npm install @mdi/angular-material @angular/cdk
 export class AppModule {
   constructor(iconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
     iconRegistry.addSvgIconSet(

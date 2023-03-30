@@ -1,3 +1,84 @@
-<p>smgs-detail works!</p>
+<div class="nsi-dialog-title">
+  {{data.messageDetail}}
+</div>
+<div style="height: 600px; display: flex; flex-flow: column;">
+    <mat-divider style="margin-top: 8px; margin-bottom: 4px;"></mat-divider>
+    <div style="overflow-y: scroll; height: 100%; ">
+      <div style="display: flex; flex-flow: column;height: 1440px;
+                  background-repeat: no-repeat;
+                  background-image: url('../../../assets/smgs_main_1024.jpg');
+                  min-width: 1024px">
+       <!-- height: 1440px smgs -->
+
+        <div style="margin-top: 110px;margin-left: 100px;">
+          <app-input [type]="'text'" [(value)]="this.data.editdata.text" [clear]="true"  [width]="280" [maxlength]="50"  [checkerText]="'Номер абонента for example'"></app-input>
+        </div>
+        <div style="margin-top: 90px;margin-left: 90px;">
+          <textarea [(ngModel)]="this.data.editdata.text" cols="55" rows="3" style="margin-left: 2px; border: 1px solid gray; border-radius: 4px;"></textarea>
+        </div>
+        <div style="margin-top: 40px;margin-left: 80px;">
+          <app-input [type]="'nsi'" [(value)]="this.data.editdata.text" [clear]="true"  [width]="200" [maxlength]="50"  [checkerText]="'Номер абонента for example'"></app-input>
+        </div>
+        <!--<mat-grid-list cols="5" rowHeight="38px">
+
+           <mat-grid-tile [colspan]="2">
+                <span style="width: 100%;"><mat-label #labelCimSmgsHid>HID</mat-label></span>
+            </mat-grid-tile>тn
+
+            <mat-grid-tile [colspan]="5">
+
+                <div style="width: 100%; margin-left: 10px;">
+                    <app-input [width]="300" [type]="'text'" [(value)]="this.data.editdata.hid" [clear]="true"   [maxlength]="50"  [checkerText]="'Номер абонента for example'"></app-input>
+                </div>
+            </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2">
+                <span style="width: 100%;"><mat-label #labelCimSmgsText></mat-label></span>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="3">
+
+                <div style="width: 100%; margin-left: 10px;">
+                    <app-input [width]="300" [type]="'text'" [(value)]="this.data.editdata.text "  [clear]="true" [maxlength]="20" [checkerText]="'Образец'"></app-input>
+                </div>
+            </mat-grid-tile>
+
+
+
+              <mat-grid-tile [colspan]="2">
+                <span style="width: 100%;"><mat-label #labelCimSmgsType> </mat-label></span>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="3">
+
+                <div style="width: 100%; margin-left: 10px;">
+                    <app-input [width]="300" [type]="'text'" [(value)]="this.data.editdata.type"  [clear]="true" [maxlength]="2"  [checkerText]="'Образец'"></app-input>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="2" >
+              <span style="width: 100%;"><mat-label #labelCimSmgsType> </mat-label></span>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="3">
+
+              <div style="width: 100%; margin-left: 10px;">
+                  <app-input [width]="300" [type]="'text'" [(value)]="this.data.editdata.sum"  [clear]="true" [maxlength]="2"  [checkerText]="'Образец'"></app-input>
+              </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>-->
+      </div>
+    </div>
+</div>
+<mat-divider style="margin-top: 8px;"></mat-divider>
+<mat-dialog-actions >
+  <button mat-raised-button color="warn" (click)="onClickDetail(1000)">Сохранить</button>
+  <button mat-raised-button color="primary" (click)="onClickDetail(0)">Отменить</button>
+</mat-dialog-actions>
+
+<!--<app-nsi-rpp-pred #nsiRppPred class="nsi-in-form" [params]="paramsRppPred"></app-nsi-rpp-pred>
+<app-nsi-pred-ta #nsiPredTa class="nsi-in-form" [params]="paramsPredTa"></app-nsi-pred-ta>
+<app-nsi-predarea-dialog #nsiPredarea class="nsi-in-form" [params]="paramsPredarea"></app-nsi-predarea-dialog> -->
+
+     <!-- background-attachment: scroll;"> -->
+
 
 

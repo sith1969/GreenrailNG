@@ -18,7 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 export class CimsmgsComponent {
 
-  title ="Cimsmgs";
+  title ="CIMSMGS";
   timeBegin = '';
   timeEnd = '';
   @Input() params = null;
@@ -58,7 +58,7 @@ export class CimsmgsComponent {
 
     this.cimsmgsSubscription = this.greenRail.getCimSmgsList().subscribe((data)=>{
       // this.CimSmgsList= data;
-        this.list.rows = data;
+        this.list.rows =data.filter(data => data.type == 1) ;
         this.spinnerVisible = false;
     })
 
